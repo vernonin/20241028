@@ -2,6 +2,6 @@
 
 export default function Home() {
   return (
-    <div>App</div>
+    <div className="bg-slate-100">App</div>
   );
 }
