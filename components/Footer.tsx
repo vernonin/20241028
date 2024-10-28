@@ -58,7 +58,7 @@ export default function Footer() {
           <div className="text-sm leading-6">Chat with any PDF: ask questions, get summaries, find information, and more.</div>
           <div className="flex justify-start space-x-4">
             {socialList.map(item => (
-              <Link rel="noopener noreferrer" href={item.href} className="flex items-center p-1">
+              <Link key={item.label} rel="noopener noreferrer" href={item.href} className="flex items-center p-1">
                 <Image width={18} height={18} src={item.iconPaht} alt={item.label} />
               </Link>
             ))}
