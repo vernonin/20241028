@@ -22,7 +22,7 @@ export default function Header() {
             <Link
               key={nav.label}
               href={nav.href}
-              className="hover:underline"
+              className="font-semibold text-sm hover:underline"
             >
               {nav.label}
             </Link>

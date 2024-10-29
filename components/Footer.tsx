@@ -50,10 +50,10 @@ const footerSheet = [
 export default function Footer() {
   return (
     <div className="bg-white">
-      <div className="lg:mx-8 my-12 px-10 py-14 flex flex-col md:flex-row gap-y-10 md:gap-y-0 border-t border-gray-200 text-gray-600">
+      <div className="lg:mx-8 my-16 px-10 py-14 flex flex-col md:flex-row gap-y-10 md:gap-y-0 border-t border-gray-200 text-gray-600">
         <div className="lg:w-1/3 space-y-6">
           <div className="w-12 rounded-ful">
-            <Image src="/favicon.ico" width={20} height={20} alt="logo" />
+            <Image src="/logo.png" width={30} height={30} alt="logo" />
           </div>
           <div className="text-sm leading-6">Chat with any PDF: ask questions, get summaries, find information, and more.</div>
           <div className="flex justify-start space-x-4">
