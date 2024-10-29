@@ -38,6 +38,7 @@ const sMap = {
   "6": "400px",
   "7": "460px",
 }
+type SMapKeys = keyof typeof sMap;
 
 const rotateMap = {
   "0": "rotate-0",
@@ -46,20 +47,18 @@ const rotateMap = {
   "270": "rotate-[270deg] transition-all ",
   "360": "rotate-[360deg] transition-all ",
 }
-
+type RotateMapKeys = keyof typeof rotateMap;
 
 function PdfPage({ pageNum, scale = 0.3, rotate = 0, onRotate }: PdfPageProps) {
   return (
     <div
-      // @ts-ignore
-      style={{maxWidth: sMap[(scale * 10)], flex: "0 0 200px"}}
+      style={{maxWidth: sMap[''+ (scale * 10) as SMapKeys], flex: "0 0 200px"}}
       className="m-3 bg-white px-2 pt-2 pb-10 relative cursor-pointer"
       onClick={() => onRotate(pageNum)}
     >
       <div className="w-full h-full overflow-hidden">
         <Page
-          // @ts-ignore
-          className={"w-full " + rotateMap[''+rotate]}
+          className={"w-full " + rotateMap[(''+rotate) as RotateMapKeys]}
           scale={scale}
           loading="加载中"
           renderAnnotationLayer={false}
@@ -79,7 +78,6 @@ function PdfPage({ pageNum, scale = 0.3, rotate = 0, onRotate }: PdfPageProps) {
 
 function PdfEdit({file, onRemove, scale, changeScale }: PdfEditProps) {
   const [pages, setPages] = useState<IPages[]>([]);
-  // const [scale, setScale] = useState<number>(0.3);
   const [scaleMin, scaleMax] = [0.1, 0.7];
 
   function docLoadSuccess({ numPages }: PDFDocumentProxy) {
