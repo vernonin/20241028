@@ -36,7 +36,7 @@ const sMap = {
 }
 
 const rotateMap = {
-  "0": "rotate-0 transition-all",
+  "0": "rotate-0",
   "90": "rotate-[90deg] transition-all ",
   "180": "rotate-[180deg] transition-all ",
   "270": "rotate-[270deg] transition-all ",
@@ -88,10 +88,17 @@ function PdfEdit({file, onRemove }: PdfEditProps) {
   }
 
   function _rotate(deg: number) {
-    if (deg > 360) {
-      return 90;
+    deg += 90;
+
+    if (deg === 360) {
+      setTimeout(setRotateOriginal, 100);
     }
-    return deg + 90;
+
+    return deg;
+  }
+
+  function setRotateOriginal() {
+    setPages(pages => pages.map(v => ({...v, rotate: v.rotate === 360 ? 0 : v.rotate})))
   }
 
   function onRotate(pageNum: number) {
