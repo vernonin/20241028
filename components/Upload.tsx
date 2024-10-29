@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function Upload({ changeFile }: { changeFile: (file: File) => void }) {
   function handleFile(event: React.ChangeEvent<HTMLInputElement>) {
     const pdfFile = event.target.files?.[0];
-    pdfFile && changeFile(pdfFile);
+    if(pdfFile) changeFile(pdfFile);
   }
 
   return (
