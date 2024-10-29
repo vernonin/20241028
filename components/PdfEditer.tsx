@@ -1,11 +1,11 @@
 'use client'
 import React, { useState } from "react";
 
-import Image from "next/image";
 import { pdfjs, Document, Page } from 'react-pdf';
-import { Upload } from ".";
 import type { PDFDocumentProxy } from 'pdfjs-dist';
 import { PDFDocument, degrees } from "pdf-lib";
+
+import { Upload } from ".";
 
 type PdfEditProps = {
   file: File;
