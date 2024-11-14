@@ -7,7 +7,7 @@ const navList = [
   { label: "Get started →", href: "/" },
 ]
 
-export default function Header() {
+function Header() {
   return (
     <header className="h-[70px] bg-white font-sans">
       <div className="container h-full mx-auto flex justify-between items-center">
@@ -32,3 +32,5 @@ export default function Header() {
     </header>
   )
 }
+
+export default Header;

@@ -1,7 +1,7 @@
 'use client'
 import Image from "next/image";
 
-export default function Upload({ changeFile }: { changeFile: (file: File) => void }) {
+function Upload({ changeFile }: { changeFile: (file: File) => void }) {
   function handleFile(event: React.ChangeEvent<HTMLInputElement>) {
     const pdfFile = event.target.files?.[0];
     if(pdfFile) changeFile(pdfFile);
@@ -19,3 +19,5 @@ export default function Upload({ changeFile }: { changeFile: (file: File) => voi
     </div>
   )
 }
+
+export default Upload;

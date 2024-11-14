@@ -47,7 +47,7 @@ const footerSheet = [
   }
 ]
 
-export default function Footer() {
+function Footer() {
   return (
     <div className="bg-white">
       <div className="lg:mx-8 my-16 px-10 py-14 flex flex-col md:flex-row gap-y-10 md:gap-y-0 border-t border-gray-200 text-gray-600">
@@ -82,3 +82,5 @@ export default function Footer() {
     </div>
   )
 }
+
+export default Footer;
